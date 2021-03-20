@@ -1,0 +1,46 @@
+.header-top{
+    background: url('Bg.png') no-repeat center/cover; 
+    height: 1000px;
+    z-index: -1;
+}
+.rider{
+    z-index: 1;
+}
+
+.bike{
+    margin: 120px 5px;
+    padding:60px;
+    border: 1px sold black;
+    /* width: 50px;
+    height: 50px; */
+    background: rgba(148, 79, 54, 0.644);
+    border-radius: 10px;
+    text-align: center;
+}
+img {
+    width: 100px;
+}
+.header{
+    text-align: center;
+    
+}
+.header img {
+    height: 80px;
+  
+}
+.header nav{
+    background: #000;
+    line-height: 40px;
+    text-align: right;
+    
+}
+nav a{
+    text-decoration: none;
+    color: #fff;
+    margin: 10px;
+    padding: 5px;
+    transition: all linear .5s;
+}
+nav a:hover{
+    background: gray;
+}
