@@ -22,9 +22,9 @@ function App() {
   const [signInUser, setSignInUser] = useState({});
   return (
     <UserContext.Provider value={[signInUser, setSignInUser]}>
-      <p>User email: {signInUser.email}</p>
+      <p>User Email: {signInUser.email}</p>
       <Router>
-            <Header></Header>
+        <Header></Header>
         <Switch>
           <Route path="/login">
             <Login></Login>
@@ -32,24 +32,24 @@ function App() {
           <Route path="/signin">
             <Signin></Signin>
           </Route>
-          <Route path ="/rider">
+          <Route path="/rider">
             <Rider></Rider>
           </Route>
-          <Route exact path ="/home">
+          <Route exact path="/home">
             <Home></Home>
           </Route>
-          <PrivateRoute path = "/book/:rideType">
+          <PrivateRoute path="/book/:rideType">
             <Book></Book>
           </PrivateRoute>
-          <PrivateRoute path="/checkout">
-            <CheckOut/>
+          <PrivateRoute path="/checkout/:rideType">
+            <CheckOut />
           </PrivateRoute>
-            <Route exact path ="/">
+          <Route exact path="/">
             <Home></Home>
           </Route>
         </Switch>
       </Router>
-      </UserContext.Provider>
+    </UserContext.Provider>
   );
 }
 
