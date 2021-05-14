@@ -4,17 +4,15 @@ import Header from './components/Header/Header';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 import Signin from './components/Signin/Signin';
 import { createContext, useState } from 'react';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import Rider from './components/Rider/Rider';
-import Book from './components/Book/Book';
-import CheckOut from './components/CheckOut/CheckOut';
+import Destination from './components/Destination/Destination';
+import Contact from './components/Contact/Contact';
 
 export const UserContext = createContext();
 
@@ -22,7 +20,6 @@ function App() {
   const [signInUser, setSignInUser] = useState({});
   return (
     <UserContext.Provider value={[signInUser, setSignInUser]}>
-      <p>User Email: {signInUser.email}</p>
       <Router>
         <Header></Header>
         <Switch>
@@ -32,18 +29,16 @@ function App() {
           <Route path="/signin">
             <Signin></Signin>
           </Route>
-          <Route path="/rider">
-            <Rider></Rider>
+          <Route path="/contact">
+            <Contact></Contact>
           </Route>
           <Route exact path="/home">
             <Home></Home>
           </Route>
-          <PrivateRoute path="/book/:rideType">
-            <Book></Book>
+          <PrivateRoute path="/destination/:id">
+            <Destination></Destination>
           </PrivateRoute>
-          <PrivateRoute path="/checkout/:rideType">
-            <CheckOut />
-          </PrivateRoute>
+         
           <Route exact path="/">
             <Home></Home>
           </Route>

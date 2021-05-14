@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import './Signin.css';
+import '../Login/Login.css';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from '../Login/firebase.config';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGit, faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 
 if (firebase.apps.length === 0) {
@@ -66,10 +68,15 @@ const Signin = () => {
             </div>
             <div className="register-google">
                 <p>----------or----------</p>
-                <button className="google-btn" onClick={handleGoogle}>Continue with google</button>
-                <button className="google-btn mt-2" onClick={handleGitHub}>Continue with GitHub</button>
-                <p>{signInUser.displayName}</p>
-                <p>{signInUser.email}</p>
+                <button className="google-btn" onClick={handleGoogle}><FontAwesomeIcon icon ={faGoogle}></FontAwesomeIcon> Continue with google</button>
+                <button className="google-btn mt-2" onClick={handleGitHub}> <FontAwesomeIcon icon = {faGithub} ></FontAwesomeIcon>Continue with GitHub</button>
+               {/* <button className='btn btn-danger rounded-pill custom-btn' onClick={handleGoogle}>
+                    <FontAwesomeIcon icon={faGoogle} /> Continue with Google
+                </button>
+                <br/>
+                <button className='btn btn-danger rounded-pill' onClick={handleGitHub}>
+                    <FontAwesomeIcon icon={faGit} /> Continue with Facebook
+                </button> */}
             </div>
         </div>
     );
